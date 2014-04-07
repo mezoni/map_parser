@@ -1,9 +1,4 @@
-###############
-## This project
-###############
-*.dll
-*.o
-*.obj
-*.so
+.DS_Store
 packages
+.project
 pubspec.lock

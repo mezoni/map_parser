@@ -1,3 +1,9 @@
+map_parser
+=====
+
+Map parser.
+
+```dart
 import 'dart:convert';
 import 'package:map_parser/map_parser.dart';
 
@@ -262,3 +268,96 @@ void main() {
   });
   print(sep);
 }
+```
+
+Output:
+
+```
+Servlet count: 5
+-------------------
+Servlet: cofaxCDS
+Servlet: cofaxEmail
+Servlet: cofaxAdmin
+Servlet: fileServlet
+Servlet: cofaxTools
+-------------------
+Servlet: cofaxCDS
+Servlet params (42)
+  configGlossary:installationAt: Philadelphia, PA
+  configGlossary:adminEmail: ksm@pobox.com
+  configGlossary:poweredBy: Cofax
+  configGlossary:poweredByIcon: /images/cofax.gif
+  configGlossary:staticPath: /content/static
+  templateProcessorClass: org.cofax.WysiwygTemplate
+  templateLoaderClass: org.cofax.FilesTemplateLoader
+  templatePath: templates
+  templateOverridePath: 
+  defaultListTemplate: listTemplate.htm
+  defaultFileTemplate: articleTemplate.htm
+  useJSP: false
+  jspListTemplate: listTemplate.jsp
+  jspFileTemplate: articleTemplate.jsp
+  cachePackageTagsTrack: 200
+  cachePackageTagsStore: 200
+  cachePackageTagsRefresh: 60
+  cacheTemplatesTrack: 100
+  cacheTemplatesStore: 50
+  cacheTemplatesRefresh: 15
+  cachePagesTrack: 200
+  cachePagesStore: 100
+  cachePagesRefresh: 10
+  cachePagesDirtyRead: 10
+  searchEngineListTemplate: forSearchEnginesList.htm
+  searchEngineFileTemplate: forSearchEngines.htm
+  searchEngineRobotsDb: WEB-INF/robots.db
+  useDataStore: true
+  dataStoreClass: org.cofax.SqlDataStore
+  redirectionClass: org.cofax.SqlRedirection
+  dataStoreName: cofax
+  dataStoreDriver: com.microsoft.jdbc.sqlserver.SQLServerDriver
+  dataStoreUrl: jdbc:microsoft:sqlserver://LOCALHOST:1433;DatabaseName=goon
+  dataStoreUser: sa
+  dataStorePassword: dataStoreTestQuery
+  dataStoreTestQuery: SET NOCOUNT ON;select test='test';
+  dataStoreLogFile: /usr/local/tomcat/logs/datastore.log
+  dataStoreInitConns: 10
+  dataStoreMaxConns: 100
+  dataStoreConnUsageLimit: 100
+  dataStoreLogLevel: debug
+  maxUrlLength: 500
+-------------------
+Servlet: cofaxEmail
+Servlet params (2)
+  mailHost: mail1
+  mailHostOverride: mail2
+-------------------
+Servlet: cofaxAdmin
+Servlet params (0)
+-------------------
+Servlet: fileServlet
+Servlet params (0)
+-------------------
+Servlet: cofaxTools
+Servlet params (13)
+  templatePath: toolstemplates/
+  log: 1
+  logLocation: /usr/local/tomcat/logs/CofaxTools.log
+  logMaxSize: 
+  dataLog: 1
+  dataLogLocation: /usr/local/tomcat/logs/dataLog.log
+  dataLogMaxSize: 
+  removePageCache: /content/admin/remove?cache=pages&id=
+  removeTemplateCache: /content/admin/remove?cache=templates&id=
+  fileTransferFolder: /usr/local/tomcat/webapps/content/fileTransferFolder
+  lookInContext: 1
+  adminGroupID: 4
+  betaServer: true
+-------------------
+Mappings:
+  cofaxCDS: /
+  cofaxEmail: /cofaxutil/aemail/*
+  cofaxAdmin: /admin/*
+  fileServlet: /static/*
+  cofaxTools: /tools/*
+-------------------
+```

@@ -1,3 +1,3 @@
-name: mezoni_parser
-description: Structured Data Parser by Mezoni.
+name: map_parser
 version: 0.1.1
+description: Map parser.
