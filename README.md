@@ -154,7 +154,7 @@ class WebAppParser {
   }
 
   // Parser format
-  
+
   Map<String, ParserCallback> _getFormat() {
     Map<String, ParserCallback> format =
       {'{web-app}': web_app,
@@ -199,16 +199,16 @@ class WebAppParser {
     return parent.mappings;
   }
 
-  void servlet_mapping(String key, String value, Map<String, ServletMapping> parent) {
+  void servlet_mapping(String key, dynamic value, Map<String, ServletMapping> parent) {
     parent[key] = new ServletMapping(value);
   }
 
-  void servlet_class(String key, String clazz, Servlet parent) {
-    parent.clazz = clazz;
+  void servlet_class(String key, dynamic clazz, Servlet parent) {
+    parent.clazz = "$clazz";
   }
 
-  void servlet_name(String key, String name, Servlet parent) {
-    parent.name = name;
+  void servlet_name(String key, dynamic name, Servlet parent) {
+    parent.name = "$name";
   }
 
   Taglib taglib(String key, dynamic value, WebApp parent) {
@@ -216,12 +216,12 @@ class WebAppParser {
     return parent.taglib;
   }
 
-  void taglib_location(String key, String location, Taglib parent) {
-    parent.location = location;
+  void taglib_location(String key, dynamic location, Taglib parent) {
+    parent.location = "$location";
   }
 
-  void taglib_uri(String key, String uri, Taglib parent) {
-    parent.uri = uri;
+  void taglib_uri(String key, dynamic uri, Taglib parent) {
+    parent.uri = "$uri";
   }
 
   WebApp web_app(String key, dynamic value, dynamic parent) {

@@ -54,13 +54,11 @@ class MapParser {
   }
 
   void _plunge(String prevFullPath, String prevAccPath, String curKey, dynamic value, dynamic prevValue) {
-    var curPathWithName = '';
-    var curPathWithMult = '';
     var acceptedPath = '';
     var curFullPath = prevFullPath.isEmpty ? curKey : '$prevFullPath.$curKey';
-
+    var curPathWithName = '';
+    var curPathWithMult = '';
     var sep = prevAccPath.isEmpty ? '' : ':';
-
     if (value is List) {
       curPathWithName = '$prevAccPath$sep[$curKey]';
       curPathWithMult = '$prevAccPath$sep[*]';
@@ -92,7 +90,8 @@ class MapParser {
           if (value is List || value is Map || value == null) {
             curValue = callback(curKey, value, prevValue);
           } else {
-            curValue = callback(curKey, '$value', prevValue);
+            //curValue = callback(curKey, '$value', prevValue);
+            curValue = callback(curKey, value, prevValue);
           }
         }
       }
